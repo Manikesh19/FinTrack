@@ -65,7 +65,7 @@ const CreateAccountDrawer = ({children}) => {
         <Drawer open={open} onOpenChange={setOpen}>
             <DrawerTrigger asChild>{children}</DrawerTrigger>
             <DrawerContent>
-                <DrawerHeader>
+                <DrawerHeader className="items-start text-left">
                     <DrawerTitle>Create New Account</DrawerTitle>
                 </DrawerHeader>
                 <div className="px-4 pb-4">
@@ -74,7 +74,7 @@ const CreateAccountDrawer = ({children}) => {
                             <label htmlFor="name" className="text-sm font-medium">Account Name</label>
                             <Input
                                 id="name"
-                                placeholder="e.g., Manikesh"
+                                placeholder="e.g., Main Checking"
                                 {...register("name")}
                             />
                             {errors.name && (
@@ -85,7 +85,7 @@ const CreateAccountDrawer = ({children}) => {
                         <div className="space-y-2">
                             <label htmlFor="type" className="text-sm font-medium">Account Type</label>
                             <Select onValueChange={(value)=> setValue("type", value)} defaultValue={watch("type")}>
-                                <SelectTrigger id="type">
+                                <SelectTrigger id="type" className="w-full">
                                     <SelectValue placeholder="Select Type" />
                                 </SelectTrigger>
                                 <SelectContent>
